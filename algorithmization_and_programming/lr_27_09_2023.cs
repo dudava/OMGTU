@@ -76,36 +76,43 @@ class HelloWorld {
         }
         Console.WriteLine(max_length);
     }
-    static void tilt(){
+    static void tilt()
+    {
         int count = Convert.ToInt32(Console.ReadLine());
-        int min_len = 99999999;
+        float min_len = float.PositiveInfinity;
         int cur_len = 0;
-        int prev_num = 0;
-        
-        for (int i = 0; i < count; i++) {
+
+        for (int i = 0; i < count; i++)
+        {
             int num = Convert.ToInt32(Console.ReadLine());
-            if (i == 0) {
-                prev_num = num;
-            }
-            if (num < 0) {
+            if (num < 0)
+            {
                 cur_len++;
             }
-            else {
-                if (cur_len < min_len) {
+            else if (cur_len > 0)
+            {
+                if (cur_len < min_len)
+                {
                     min_len = cur_len;
                 }
                 cur_len = 0;
             }
-            if (i == count - 1 && cur_len != 0) {
-                if (cur_len < min_len) {
+            if (i == count - 1 && cur_len > 0)
+            {
+                if (cur_len < min_len)
+                {
                     min_len = cur_len;
                 }
+                cur_len = 0;
             }
-            prev_num = num;
+        }
+        if (min_len == float.PositiveInfinity)
+        {
+            min_len = 0;
         }
         Console.WriteLine(min_len);
     }
-  static void Main() {
+    static void Main() {
     //   neighborhood();
     // plus_minus();
     //max_length_equal_elements();
