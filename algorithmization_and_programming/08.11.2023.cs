@@ -10,7 +10,7 @@ namespace ConsoleApplication8
     {
         static int minimum(int[] lexa)
         {
-            int min = 99999999;
+            int min = lexa[0];
             for (int i = 0; i < lexa.Length; i++)
             {
                 if (min > lexa[i]) min = lexa[i];
@@ -19,7 +19,7 @@ namespace ConsoleApplication8
         }
         static int maximum(int[] lexa)
         {
-            int max = 0;
+            int max = lexa[0];
             for (int i = 0; i < lexa.Length; i++)
             {
                 if (max < lexa[i]) max = lexa[i];
