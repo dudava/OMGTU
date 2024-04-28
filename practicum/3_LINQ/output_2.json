@@ -1,0 +1,12 @@
+{
+  "Response": [
+    {
+      "Name": "Programming",
+      "AverageMark": 4.25
+    },
+    {
+      "Name": "Algebra",
+      "AverageMark": 4.25
+    }
+  ]
+}
