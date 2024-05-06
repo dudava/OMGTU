@@ -29,8 +29,7 @@ def get_last_ribs(matrix):
 
 
 def voyager(matrix, w, path):
-    if len(path) > 2:
-        print(w, path + get_last_ribs(matrix))
+    if len(path) == len(matrix) - 2:
         return (w, path + get_last_ribs(matrix))
     H = 0
     for _ in range(len(matrix)):
@@ -70,8 +69,8 @@ def voyager(matrix, w, path):
 
     return voyager(matrix, w + H, new_path)
 
-w, ribs = voyager(matrix, 0, [])
 
+w, ribs = voyager(matrix, 0, [])
 path = []
 for _ in range(len(ribs)):
     cur_path = [ribs[_]]
@@ -85,4 +84,4 @@ for _ in range(len(ribs)):
         path = cur_path
         break
 
-print([(_[0] + 1, _[1] + 1) for _ in path])
+print(w, [(_[0] + 1, _[1] + 1) for _ in path])
